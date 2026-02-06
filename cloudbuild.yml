@@ -1,0 +1,3 @@
+steps:
+  - name: 'ubuntu'
+    args: ['echo',"Hello H4d3rach, welcome back!"]
