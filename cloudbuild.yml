@@ -1,3 +1,11 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
-  - name: 'ubuntu'
-    args: ['echo',"Hello H4d3rach, welcome back! this is a poc of DevSecOps at GCP"]
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "Hello H4d3rach, welcome back!"
+        echo "Cloud Build trigger works 🔥"
