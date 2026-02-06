@@ -1,3 +1,3 @@
 steps:
   - name: 'ubuntu'
-    args: ['echo',"Hello H4d3rach, welcome back!"]
+    args: ['echo',"Hello H4d3rach, welcome back! this is a poc of DevSecOps at GCP"]
