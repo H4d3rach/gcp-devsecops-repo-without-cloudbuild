@@ -2,10 +2,6 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        echo "Hello H4d3rach, welcome back!"
-        echo "Cloud Build trigger works 🔥"
+  - name: 'maven:3-jdk-11'
+    entrypoint: 'mvn'
+    args: ['verify', 'sonar:sonar', '-Dsonar.host.url=https://sonarcloud.io', '-Dsonar.organization=h4d3rach-gcp', '-Dsonar.projectKey=gcp-source-code','-Dsonar.login=aa57a86af41799c822572937bf88ae1d3535d5cc']
