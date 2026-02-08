@@ -4,4 +4,4 @@ options:
 steps:
   - name: 'maven:3.9.6-eclipse-temurin-17'
     entrypoint: 'mvn'
-    args: ['verify', 'sonar:sonar', '-Dsonar.host.url=https://sonarcloud.io', '-Dsonar.organization=h4d3rach-gcp', '-Dsonar.projectKey=gcp-source-code','-Dsonar.login=aa57a86af41799c822572937bf88ae1d3535d5cc']
+    args: ['verify', 'sonar:sonar', '-Dsonar.host.url=https://sonarcloud.io', '-Dsonar.organization=h4d3rach-gcp', '-Dsonar.projectKey=gcp-source-code','-Dsonar.token=${_SONAR_TOKEN}']
