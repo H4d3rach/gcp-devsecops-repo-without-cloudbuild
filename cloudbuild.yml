@@ -4,4 +4,12 @@ options:
 steps:
   - name: 'maven:3.9.6-eclipse-temurin-17'
     entrypoint: 'mvn'
-    args: ['verify', 'sonar:sonar', '-Dsonar.host.url=https://sonarcloud.io', '-Dsonar.organization=h4d3rach-gcp', '-Dsonar.projectKey=gcp-source-code','-Dsonar.token=${_SONAR_TOKEN}']
+    args: 
+        - '-c'
+        - |-
+          apt-get update
+          apt-get -y install maven 
+          SNYK_TOKEN=${_SNYK_TOKEN}
+          export SNYK_TOKEN
+          mvn snyk:test -fn 
+    id: Snyk SCA
