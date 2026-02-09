@@ -2,13 +2,11 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-  - name: 'ubuntu'
-    entrypoint: 'mvn'
+  - name: 'maven:3.9.6-eclipse-temurin-17'
+    entrypoint: 'bash'
     args: 
         - '-c'
         - |-
-          apt-get update
-          apt-get -y install maven 
           SNYK_TOKEN=${_SNYK_TOKEN}
           export SNYK_TOKEN
           mvn snyk:test -fn 
